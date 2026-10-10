@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="BetaFlow builds semantic search, adapts AI models through fine-tuning, and explores efficient generative AI with low-rank methods.">
   
-  <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="BetaFlow | AI Engineering & Research">
   <meta property="og:description" content="Semantic search architectures, domain fine-tuning, and low-rank tensor methods for efficient generative AI.">
   <meta property="og:type" content="website">
-  
+
   <title>BetaFlow | AI Engineering &amp; Research</title>
   <style>
     :root {
@@ -21,16 +20,30 @@
       --accent: #7dd3fc;
       --border: #29374c;
     }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: system-ui, -apple-system, sans-serif;
-      line-height: 1.65;
+
+    *, *::before, *::after {
+      box-sizing: border-box;
     }
-    .container { width: min(1080px, 90%); margin-inline: auto; }
-    a { color: var(--accent); }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: min(1080px, 90%);
+      margin-inline: auto;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
     nav {
       display: flex;
       justify-content: space-between;
@@ -38,6 +51,7 @@
       padding-block: 24px;
       gap: 20px;
     }
+
     .brand {
       color: var(--text);
       font-size: 1.5rem;
@@ -45,26 +59,41 @@
       text-decoration: none;
       letter-spacing: -1px;
     }
-    nav .contact-link { 
-      text-decoration: none; 
+
+    nav .contact-link {
+      text-decoration: none;
       font-weight: 600;
     }
-    .hero { padding: 95px 0 85px; max-width: 850px; }
+
+    .hero {
+      padding: 95px 0 85px;
+      max-width: 850px;
+    }
+
     .eyebrow {
       color: var(--accent);
-      font-size: .85rem;
+      font-size: 0.85rem;
       font-weight: 650;
       letter-spacing: 2px;
       text-transform: uppercase;
+      margin: 0 0 10px;
     }
+
     h1 {
+      color: var(--text);
       font-size: clamp(2.7rem, 7vw, 4.8rem);
       line-height: 1.08;
       letter-spacing: -2px;
       margin: 20px 0;
     }
-    .intro { max-width: 650px; color: var(--muted); font-size: 1.2rem; }
-    
+
+    .intro {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1.2rem;
+      margin-bottom: 24px;
+    }
+
     .cta-group {
       display: flex;
       gap: 16px;
@@ -72,6 +101,7 @@
       flex-wrap: wrap;
       margin-top: 24px;
     }
+
     .button {
       display: inline-block;
       padding: 13px 23px;
@@ -82,28 +112,44 @@
       text-decoration: none;
       transition: transform 0.15s ease, opacity 0.15s ease;
     }
+
     .button:hover {
       opacity: 0.92;
       transform: translateY(-1px);
     }
+
     .button-secondary {
       background: transparent;
       color: var(--text);
       border: 1px solid var(--border);
     }
+
     .button-secondary:hover {
       border-color: var(--accent);
       color: var(--accent);
     }
 
-    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
-    section { padding-bottom: 70px; }
-    h2 { font-size: 1.9rem; letter-spacing: -.5px; }
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 5px;
+    }
+
+    section {
+      padding-bottom: 70px;
+    }
+
+    h2 {
+      color: var(--text);
+      font-size: 1.9rem;
+      letter-spacing: -0.5px;
+    }
+
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 20px;
     }
+
     .card {
       display: flex;
       flex-direction: column;
@@ -113,10 +159,105 @@
       border-radius: 12px;
       transition: border-color 0.2s ease;
     }
+
     .card:hover {
       border-color: var(--accent);
     }
-    .card h3 { font-size: 1.3rem; line-height: 1.3; margin: 0 0 12px; }
-    .card p, .about p { color: var(--muted); }
-    .card .value { margin-top: auto; padding-top: 10px; }
-    .card
+
+    .card h3 {
+      color: var(--text);
+      font-size: 1.3rem;
+      line-height: 1.3;
+      margin: 0 0 12px;
+    }
+
+    .card p, .about p {
+      color: var(--muted);
+    }
+
+    .card .value {
+      margin-top: auto;
+      padding-top: 10px;
+    }
+
+    .card .value strong {
+      color: var(--text);
+    }
+
+    .about {
+      max-width: 760px;
+    }
+
+    .contact {
+      padding: 40px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .contact h2 {
+      margin-top: 0;
+    }
+
+    .contact a {
+      overflow-wrap: anywhere;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 70px;
+      padding-block: 25px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 800px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        padding-block: 60px;
+      }
+      .contact {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="container">
+    <nav aria-label="Main navigation">
+      <a class="brand" href="#">BetaFlow<span style="color:var(--accent)">.</span></a>
+      <a class="contact-link" href="#contact">Get in touch →</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">AI Engineering &amp; Research</p>
+      <h1 id="hero-title">Practical AI.<br>Built for your business.</h1>
+      <p class="intro">From search systems that understand meaning to models adapted for your data and research into efficient generative AI.</p>
+      <div class="cta-group">
+        <a class="button" href="mailto:info@betaflow.ai?subject=BetaFlow%20project%20enquiry">Discuss your project →</a>
+        <a class="button button-secondary" href="#services">Explore services</a>
+      </div>
+    </section>
+
+    <section id="services" aria-labelledby="services-title">
+      <h2 id="services-title">Services</h2>
+      <div class="services-grid">
+        <article class="card">
+          <h3>Semantic Search &amp; Embedding Systems</h3>
+          <p>Build search that understands what people mean, not just the words they type. I help design and improve embedding-based retrieval and ranking systems, from model selection and data preparation to evaluation against real search needs.</p>
+          <p class="value"><strong>Customer value:</strong> Help users find relevant results more easily, improve search quality, and give your team clear ways to measure progress.</p>
+        </article>
+
+        <article class="card">
+          <h3>Fine-Tuning for Your Data</h3>
+          <p>Adapt pretrained models to your domain, language, and tasks. I can help assess your data and goals, select a suitable base model, build the fine-tuning pipeline, and evaluate the results
